@@ -365,9 +365,131 @@
           }
         }
       }
-    }},
+    },
+    "view-layer": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/view-layer",
+      "sourceRoot": "projects/view-layer/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/view-layer",
+            "index": "projects/view-layer/src/index.html",
+            "main": "projects/view-layer/src/main.ts",
+            "polyfills": "projects/view-layer/src/polyfills.ts",
+            "tsConfig": "projects/view-layer/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/view-layer/src/favicon.ico",
+              "projects/view-layer/src/assets"
+            ],
+            "styles": [
+              "projects/view-layer/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/view-layer/src/environments/environment.ts",
+                  "with": "projects/view-layer/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "view-layer:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "view-layer:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "view-layer:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/view-layer/src/test.ts",
+            "polyfills": "projects/view-layer/src/polyfills.ts",
+            "tsConfig": "projects/view-layer/tsconfig.spec.json",
+            "karmaConfig": "projects/view-layer/karma.conf.js",
+            "assets": [
+              "projects/view-layer/src/favicon.ico",
+              "projects/view-layer/src/assets"
+            ],
+            "styles": [
+              "projects/view-layer/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/view-layer/tsconfig.app.json",
+              "projects/view-layer/tsconfig.spec.json",
+              "projects/view-layer/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/view-layer/e2e/protractor.conf.js",
+            "devServerTarget": "view-layer:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "view-layer:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "analytics": "8eae7d65-e9f3-480c-a378-d400b64a9e52"
   },
-  "defaultProject": "angular-flex-layout"
+  "defaultProject": "view-layer"
 }

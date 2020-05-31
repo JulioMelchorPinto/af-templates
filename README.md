@@ -1,27 +1,73 @@
-# AfTemplates
+<h1> Angular Firebase Templates </h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+Angular layout templates collection.
 
-## Development server
+<h3> Table of Contents </h3>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Projects](#projects)
+  - [flex-layout](#flex-layout)
+  - [grid-layout](#grid-layout)
+  - [angular-flex-layout](#angular-flex-layout)
+  - [Heading](#heading)
 
-## Code scaffolding
+# Projects
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<details>
 
-## Build
+  <summary>Flex layout</summary>
+  
+## flex-layout
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+  1. A numbered
+  2. list
+     * With some
+     * Sub bullets
 
-## Running unit tests
+</details>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<details>
 
-## Running end-to-end tests
+  <summary>Grid layout</summary>
+  
+## grid-layout
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+  1. A numbered
+  2. list
+     * With some
+     * Sub bullets
+  
+</details>
 
-## Further help
+<details>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  <summary>Angular flex layout</summary>
+  
+## angular-flex-layout
+
+    This project uses NPM packages:
+    
+  * @angular/flex-layout
+  * @angular/cdk
+
+
+
+
+  1. External dependencies
+  2. list
+     * With some
+     * Sub bullets
+  
+</details>
+
+<details>
+
+  <summary>Other layout</summary>
+  
+## Heading
+
+  1. A numbered
+  2. list
+     * With some
+     * Sub bullets
+  
+</details>

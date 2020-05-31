@@ -244,9 +244,130 @@
           }
         }
       }
+    },
+    "angular-flex-layout": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/angular-flex-layout",
+      "sourceRoot": "projects/angular-flex-layout/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angular-flex-layout",
+            "index": "projects/angular-flex-layout/src/index.html",
+            "main": "projects/angular-flex-layout/src/main.ts",
+            "polyfills": "projects/angular-flex-layout/src/polyfills.ts",
+            "tsConfig": "projects/angular-flex-layout/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/angular-flex-layout/src/favicon.ico",
+              "projects/angular-flex-layout/src/assets"
+            ],
+            "styles": [
+              "projects/angular-flex-layout/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular-flex-layout/src/environments/environment.ts",
+                  "with": "projects/angular-flex-layout/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular-flex-layout:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-flex-layout:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular-flex-layout:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-flex-layout/src/test.ts",
+            "polyfills": "projects/angular-flex-layout/src/polyfills.ts",
+            "tsConfig": "projects/angular-flex-layout/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-flex-layout/karma.conf.js",
+            "assets": [
+              "projects/angular-flex-layout/src/favicon.ico",
+              "projects/angular-flex-layout/src/assets"
+            ],
+            "styles": [
+              "projects/angular-flex-layout/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-flex-layout/tsconfig.app.json",
+              "projects/angular-flex-layout/tsconfig.spec.json",
+              "projects/angular-flex-layout/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/angular-flex-layout/e2e/protractor.conf.js",
+            "devServerTarget": "angular-flex-layout:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular-flex-layout:serve:production"
+            }
+          }
+        }
+      }
     }},
   "cli": {
     "analytics": "8eae7d65-e9f3-480c-a378-d400b64a9e52"
   },
-  "defaultProject": "flex-layout"
+  "defaultProject": "angular-flex-layout"
 }

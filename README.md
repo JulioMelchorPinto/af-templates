@@ -46,5 +46,5 @@ This project uses NPM packages:
 - @angular/flex-layout
 - @angular/cdk
 
-For site demostration go to [dynamic-layout](https://dynamic-layout.web.app).
+For site demostration go to [dynamic-layout](https://my-dynamic-layout.web.app).
 

@@ -8,6 +8,7 @@ Angular layout templates collection.
   - [grid-layout](#grid-layout)
   - [angular-flex-layout](#angular-flex-layout)
   - [view-layout](#view-layout)
+  - [dynamic-layout](#dynamic-layout)
 
 # Projects
   
@@ -36,3 +37,14 @@ This project uses NPM packages:
 - @angular/cdk
 
 For site demostration go to [view-layout](https://view-layout.web.app).
+
+## dynamic-layout
+
+This project uses NPM packages:
+
+- @angular/material
+- @angular/flex-layout
+- @angular/cdk
+
+For site demostration go to [dynamic-layout](https://dynamic-layout.web.app).
+

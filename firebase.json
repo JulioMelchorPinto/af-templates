@@ -28,6 +28,20 @@
           "destination": "/index.html"
         }
       ]
+      },{
+        "site": "my-dynamic-layout",
+        "public": "dist/dynamic-layout",
+        "ignore": [
+          "firebase.json",
+          "**/.*",
+          "**/node_modules/**"
+        ],
+        "rewrites": [
+          {
+            "source": "**",
+            "destination": "/index.html"
+          }
+        ]
     },{
       "site": "view-layer",
       "public": "dist/view-layer",

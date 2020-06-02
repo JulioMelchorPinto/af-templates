@@ -607,10 +607,131 @@
           }
         }
       }
+    },
+    "beaverblog": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/beaverblog",
+      "sourceRoot": "projects/beaverblog/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/beaverblog",
+            "index": "projects/beaverblog/src/index.html",
+            "main": "projects/beaverblog/src/main.ts",
+            "polyfills": "projects/beaverblog/src/polyfills.ts",
+            "tsConfig": "projects/beaverblog/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/beaverblog/src/favicon.ico",
+              "projects/beaverblog/src/assets"
+            ],
+            "styles": [
+              "projects/beaverblog/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/beaverblog/src/environments/environment.ts",
+                  "with": "projects/beaverblog/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "beaverblog:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "beaverblog:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "beaverblog:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/beaverblog/src/test.ts",
+            "polyfills": "projects/beaverblog/src/polyfills.ts",
+            "tsConfig": "projects/beaverblog/tsconfig.spec.json",
+            "karmaConfig": "projects/beaverblog/karma.conf.js",
+            "assets": [
+              "projects/beaverblog/src/favicon.ico",
+              "projects/beaverblog/src/assets"
+            ],
+            "styles": [
+              "projects/beaverblog/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/beaverblog/tsconfig.app.json",
+              "projects/beaverblog/tsconfig.spec.json",
+              "projects/beaverblog/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/beaverblog/e2e/protractor.conf.js",
+            "devServerTarget": "beaverblog:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "beaverblog:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "cli": {
     "analytics": "8eae7d65-e9f3-480c-a378-d400b64a9e52"
   },
-  "defaultProject": "dynamic-layout"
+  "defaultProject": "beaverblog"
 }

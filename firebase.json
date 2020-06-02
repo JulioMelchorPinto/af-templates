@@ -28,7 +28,7 @@
           "destination": "/index.html"
         }
       ]
-      },{
+    },{
         "site": "my-dynamic-layout",
         "public": "dist/dynamic-layout",
         "ignore": [
@@ -59,6 +59,20 @@
     },{
       "site": "angular-flex-layout",
       "public": "dist/angular-flex-layout",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },{
+      "site": "beaverblog",
+      "public": "dist/beaverblog",
       "ignore": [
         "firebase.json",
         "**/.*",

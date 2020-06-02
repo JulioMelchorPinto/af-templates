@@ -1,5 +1,11 @@
 {
   "compileOnSave": false,
+  /** Uncomment this for import components and modules way easier then remembering the actual path.
+  "baseUrl": "src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@layout/*": ["app/layout/*"]
+    } */
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
